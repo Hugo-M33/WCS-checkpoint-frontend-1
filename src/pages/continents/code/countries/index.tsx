@@ -2,7 +2,6 @@ import { InputAdornment, Stack, TextField, Typography } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import BoxLink from "../../../../components/BoxLink";
 import { useLoaderData } from "react-router-dom";
-import { ApolloClient, NormalizedCacheObject } from "@apollo/client";
 import { Country } from "../../../../apollo/queries";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import { useState } from "react";
@@ -14,7 +13,7 @@ export default function CountriesPage() {
   const countriesList = useFilter(countries, filter);
   return (
     <Stack spacing={3}>
-      <Typography>Pays</Typography>
+      <Typography variant="h1">Pays</Typography>
       <TextField
         label="Rechercher un pays..."
         defaultValue={filter}

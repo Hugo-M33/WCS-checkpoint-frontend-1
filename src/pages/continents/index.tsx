@@ -1,12 +1,5 @@
-import {
-  Box,
-  InputAdornment,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
-import { useQuery } from "@apollo/client";
-import { Continent, GET_CONTINENTS_QUERIES } from "../../apollo/queries";
+import { InputAdornment, Stack, TextField, Typography } from "@mui/material";
+import { Continent } from "../../apollo/queries";
 import { Search } from "@mui/icons-material";
 import BoxLink from "../../components/BoxLink";
 import { useLoaderData } from "react-router-dom";
@@ -21,7 +14,7 @@ export default function ContinentsPage() {
 
   return (
     <Stack spacing={3}>
-      <Typography>Continents</Typography>
+      <Typography variant="h1">Continents</Typography>
       <TextField
         label="Rechercher un continent"
         defaultValue={filter}

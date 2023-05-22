@@ -1,11 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import {
-  redirect,
-  useLocation,
-  useNavigate,
-  useOutlet,
-} from "react-router-dom";
+import { useLocation, useNavigate, useOutlet } from "react-router-dom";
 import { Box } from "@mui/material";
 import Header from "./components/Header";
 
