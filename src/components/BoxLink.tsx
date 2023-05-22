@@ -10,11 +10,13 @@ interface BoxLinkProps {
 export default function BoxLink({ name, code, icon }: BoxLinkProps) {
   return (
     <Link to={code}>
-      <Box>
+      <Box border="1px solid black">
         <Stack direction="column">
           {icon ? <Typography>{icon}</Typography> : null}
           <Typography>{code}</Typography>
-          <Typography>{name}</Typography>
+          <Typography>
+            <b>{name}</b>
+          </Typography>
         </Stack>
       </Box>
     </Link>

@@ -1,5 +1,13 @@
 import { useLoaderData } from "react-router-dom";
-import { Box, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  ListSubheader,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { Country } from "../../../../../apollo/queries";
 import { Phone } from "@mui/icons-material";
 
@@ -20,6 +28,32 @@ export default function CountryDetail() {
         <Stack direction="row" alignItems="center" justifyContent="center">
           <Phone />
           <Typography textAlign="center">+{phone}</Typography>
+        </Stack>
+        <Stack direction="row" justifyContent="center" gap={8}>
+          <Stack
+            boxShadow={"2px 3px 4px rgba(0.1, 0.05, 0.075, 0.3)"}
+            minWidth={200}
+          >
+            <List subheader={<ListSubheader>Languages</ListSubheader>}>
+              {country.languages?.map((language) => (
+                <ListItem key={language.name}>
+                  <ListItemText primary={language.name} />
+                </ListItem>
+              ))}
+            </List>
+          </Stack>
+          <Stack
+            boxShadow={"2px 3px 4px rgba(0.1, 0.05, 0.075, 0.3)"}
+            minWidth={200}
+          >
+            <List subheader={<ListSubheader>States</ListSubheader>}>
+              {country.states?.map((state) => (
+                <ListItem key={state.code}>
+                  <ListItemText primary={state.name} secondary={state.code} />
+                </ListItem>
+              ))}
+            </List>
+          </Stack>
         </Stack>
       </Stack>
     </Box>
